@@ -508,70 +508,92 @@ implementation of LINQ:
 
 .. list-table::
    :header-rows: 1
-   :widths: 40 60
+   :widths: 40 60 40
 
    * - Method Name
      - Description
+     - Aggregation Stage
    
    * - ``Any``
      - Determines if any documents match the specified criteria
+     - 
 
    * - ``Average``
      - Calculates the average of the specified fields
+     - 
 
    * - ``Count``
      - Returns an ``Int32`` that represents the number of documents that match the specified criteria
+     - 
 
    * - ``LongCount``
      - Returns an ``Int64`` that represents the number of documents that match the specified criteria
+     - 
 
    * - ``Distinct``
      - Returns distinct documents that match the specified criteria
+     - 
 
    * - ``First``
      - Returns the first matching document, and throws an exception if none are found
+     - ``$limit``
 
    * - ``FirstOrDefault``
      - Returns the first matching document, or ``null`` if none are found
+     - ``$limit``
 
    * - ``GroupBy``
      - Groups documents based on specified criteria
+     - ``$group``
 
    * - ``GroupJoin``
      - Performs a left outer join to another collection in the same database
+     - ``$lookup``
 
    * - ``Max``
      - Returns the document with the maximum specified value
+     - 
 
    * - ``OfType``
      - Returns documents that match the specified type
+     - 
 
    * - ``OrderBy``, ``OrderByDescending``
      - Returns results in a specified sort order
+     - ``$sort``
 
    * - ``ThenBy``, ``ThenByDescending``
      - Allows a secondary sort to be specified
+     - ``$sort``
 
    * - ``Select``
      - Selects documents based on specified criteria
+     - ``$project``
 
    * - ``SelectMany``
      - Projects each element of a sequence and combines the resulting sequences into one document
+     - ``$unwind``
 
    * - ``Single``
      - Returns the only matching document, and throws an exception if there is not exactly one document
+     - 
    
    * - ``SingleOrDefault``
      - Returns a single matching document or ``null`` if no documents match
+     - ``$limit``
 
    * - ``Skip``
      - Skips over a specified number of documents and returns the rest of the results
+     - ``$skip``
 
    * - ``Sum``
      - Returns the sum of the values in a specified field
+     - 
 
    * - ``Take``
      - Specifies the number of results to return
+     - ``$limit``
 
    * - ``Where``
      - Returns all documents that match your specified criteria
+     - ``$match``
